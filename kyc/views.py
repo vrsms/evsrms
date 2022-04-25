@@ -7,8 +7,7 @@ from django.http import HttpResponse
 def index(request):
     """
     Homepage view
-    Returns the homepage of the service app
+    Returns the homepage of the system
     """
 
-    return HttpResponse("Hello, world! You're at the service index.")
-
+    return HttpResponse("Hello, world! You're at the evsmms index.")
