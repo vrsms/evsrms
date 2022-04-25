@@ -21,10 +21,10 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Service',
+            name='ServiceTicket',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('service_date', models.DateTimeField(verbose_name='Service Date')),
+                ('service_date', models.DateTimeField(verbose_name='ServiceTicket Date')),
                 ('cost', models.IntegerField(default=0)),
                 ('service_ticket', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='service.vehicle')),
             ],

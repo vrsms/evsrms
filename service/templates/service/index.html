@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Vehicle Service</title>
+</head>
+<body>
+{% if latest_vehicle_list %}
+<ul>
+{% for vehicle in latest_vehicle_list %}
+<li><a href="/service/{{ vehicle.id }}/">{{ vehicle.make }} {{ vehicle.model }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No service tickets are available.</p>
+{% endif %}
+
+</body>
+</html>

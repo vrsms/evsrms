@@ -1,2 +1,2 @@
 # evsmms
-# Electronic Vehicle Service and Maitenance Management System.
+# Electronic Vehicle Service and Maintenance Management System.
