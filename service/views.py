@@ -1,5 +1,5 @@
 from django.core.handlers.wsgi import WSGIRequest
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import Http404
 from django.http import HttpResponse
 from .models import Vehicle
@@ -24,8 +24,5 @@ def detail(request: WSGIRequest, vehicle_id: int) -> HttpResponse | Http404:
     """
     Vehicle details
     """
-    try:
-        vehicle = Vehicle.objects.get(pk=vehicle_id)
-    except Vehicle.DoesNotExist:
-        raise Http404("Vehicle does not exist")
+    vehicle = get_object_or_404(Vehicle, pk=vehicle_id)
     return render(request, 'service/detail.html', {'vehicle': vehicle})
