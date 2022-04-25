@@ -9,7 +9,7 @@
 {% if latest_vehicle_list %}
 <ul>
 {% for vehicle in latest_vehicle_list %}
-<li><a href="{% url 'detail' vehicle.id %}">{{ vehicle.make }} {{ vehicle.model }}</a></li>
+<li><a href="{% url 'service:detail' vehicle.id %}">{{ vehicle.make }} {{ vehicle.model }}</a></li>
 {% endfor %}
 </ul>
 {% else %}
