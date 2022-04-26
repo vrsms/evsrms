@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'kyc.apps.KycConfig',
     'service.apps.ServiceConfig',
     'django.contrib.admin',
     'django.contrib.auth',
