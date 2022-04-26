@@ -5,13 +5,23 @@ from django.db import models
 
 class Vehicle(models.Model):
     make = models.CharField(max_length=30)
-    model = models.CharField('vehicle_model', max_length=20)
+    model = models.CharField('vehicle_model', max_length=30)
+    plate_number = models.CharField('Plate number', max_length=30)
+    category = models.CharField(max_length=30)
+    status = models.CharField('Operation status', max_length=30)
 
     def __str__(self):
-        return self.make
+        return self.plate_number
 
 
 class ServiceTicket(models.Model):
-    service_ticket = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
-    service_date = models.DateTimeField('ServiceTicket Date')
+    vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
+    status = models.CharField('Operation status', max_length=30)
+    item_serviced = models.CharField(max_length=30)
+    frequency = models.IntegerField(default=0)
     cost = models.IntegerField(default=0)
+    date = models.DateTimeField()
+
+    def __str__(self):
+        return self.item_serviced
+
