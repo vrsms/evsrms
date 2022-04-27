@@ -10,11 +10,7 @@ from service.models import Vehicle
 def index(request: WSGIRequest) -> HttpResponse | Http404:
     """
     Homepage view
-    Returns the homepage of the service app
+    Returns the homepage of the system
     """
-    latest_vehicle_list = Vehicle.objects.order_by('-make')[:5]
 
-    context = {
-        'latest_vehicle_list': latest_vehicle_list,
-    }
-    return render(request, 'kyc/index.html', context)
+    return render(request, 'kyc/index.html')
