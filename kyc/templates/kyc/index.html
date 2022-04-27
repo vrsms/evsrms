@@ -5,9 +5,15 @@
     <title>Welcome</title>
 </head>
 <body>
-<h2> You are welcome</h2>
-<p><a href="{% url 'admin:index' %}"> Vehicle Owner</a></p>
-<p><a href="{% url 'admin:index' %}"> Fleet Manager</a></p>
-<p><a href="{% url 'service:index' %}"> Driver</a></p>
+<h2>Electronic Vehicle Service and Maintenance Management System</h2>
+<fieldset>
+   <legend>Staff</legend>
+    <p><a href="{% url 'admin:index' %}">Vehicle Owner</a></p>
+<p><a href="{% url 'admin:index' %}">Fleet Manager</a></p>
+</fieldset>
+<fieldset>
+    <legend>Non-Staff</legend>
+    <p><a href="{% url 'login' %}">Driver</a></p>
+</fieldset>
 </body>
 </html>

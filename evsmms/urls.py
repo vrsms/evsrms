@@ -20,4 +20,5 @@ urlpatterns = [
     path('', include('kyc.urls')),
     path('service/', include('service.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
