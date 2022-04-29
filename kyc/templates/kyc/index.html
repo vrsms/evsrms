@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+        <!-- CSS only -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         * {
     box-sizing: border-box;
@@ -90,9 +94,13 @@ h1 {
 
 <h2>Electronic Vehicle Service and Maintenance Management System</h2>
 <hr>
-
-<h2>Vehicle management, redefined!</h2>
+    <div class="content">
+  <img src="bear.jpg" alt="Bear" style="width:100%">
+  <h2>Vehicle management, redefined!</h2>
 <p>Achieve more profits, the smart way.</p>
+</div>
+
+
 
 <!-- Portfolio Gallery Grid -->
 <div class="row">
@@ -100,21 +108,21 @@ h1 {
     <div class="content">
       <img src="mountains.jpg" alt="Mountains" style="width:100%">
       <h3><a href="{% url 'admin:index' %}">Vehicle Owner</a></h3>
-      <p>superuser</p>
+      <p>Your transportation business needs an intelligent management. </p>
     </div>
   </div>
   <div class="column">
     <div class="content">
       <img src="lights.jpg" alt="Lights" style="width:100%">
       <h3><a href="{% url 'admin:index' %}">Fleet Manager</a></h3>
-      <p>Medium Privileges</p>
+      <p>The whole fleet, expertly managed.</p>
     </div>
   </div>
   <div class="column">
     <div class="content">
       <img src="nature.jpg" alt="Nature" style="width:100%">
       <h3><a href="{% url 'login' %}">Driver</a></h3>
-      <p>least privileges</p>
+      <p>Put your car in control.</p>
     </div>
   </div>
   <div class="column">
@@ -122,18 +130,31 @@ h1 {
       <img src="mountains.jpg" alt="Mountains" style="width:100%">
       <h3><a href="https://evsmms.github.io/">About This Project</a></h3>
       <p>You deserve more</p>
+        <p>Learn how to install the system and streamline your asset management.</p>
     </div>
   </div>
 </div>
 
-<div class="content">
-  <img src="bear.jpg" alt="Bear" style="width:100%">
-  <h3>Copyright</h3>
-  <p>All rights reserved</p>
-</div>
+
 
 <!-- END MAIN -->
 </div>
 {% endif %}
+<div style="text-align: center">
+  <p>v0.0.0
+    <strong>&copy;2021-
+            <script>document.write(new Date().getFullYear().toString());</script>
+         <a href="https://evsmms.github.io" title="Evsmms Software">
+            Evsmms&#153 Software</a>
+    </strong>
+</p>
+    <p> Some rights reserved.</p>
+</div>
+
+<!-- JavaScript Bundle with Popper -->
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
