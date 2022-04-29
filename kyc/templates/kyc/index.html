@@ -3,9 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+    <style>
+        * {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+}
+
+/* Center website */
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats after rows */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+    </style>
 </head>
 <body>
-<h2>Electronic Vehicle Service and Maintenance Management System</h2>
+<!-- <h2>Electronic Vehicle Service and Maintenance Management System</h2>-->
+{% if  user.is_authenticated %}
 <fieldset>
    <legend>Staff</legend>
     <p><a href="{% url 'admin:index' %}">Vehicle Owner</a></p>
@@ -15,5 +81,59 @@
     <legend>Non-Staff</legend>
     <p><a href="{% url 'login' %}">Driver</a></p>
 </fieldset>
+
+    <p> oi {{ user.username }}</p>
+
+{% else %}
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<h2>Electronic Vehicle Service and Maintenance Management System</h2>
+<hr>
+
+<h2>Vehicle management, redefined!</h2>
+<p>Achieve more profits, the smart way.</p>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column">
+    <div class="content">
+      <img src="mountains.jpg" alt="Mountains" style="width:100%">
+      <h3><a href="{% url 'admin:index' %}">Vehicle Owner</a></h3>
+      <p>superuser</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+      <img src="lights.jpg" alt="Lights" style="width:100%">
+      <h3><a href="{% url 'admin:index' %}">Fleet Manager</a></h3>
+      <p>Medium Privileges</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+      <img src="nature.jpg" alt="Nature" style="width:100%">
+      <h3><a href="{% url 'login' %}">Driver</a></h3>
+      <p>least privileges</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+      <img src="mountains.jpg" alt="Mountains" style="width:100%">
+      <h3><a href="https://evsmms.github.io/">About This Project</a></h3>
+      <p>You deserve more</p>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <img src="bear.jpg" alt="Bear" style="width:100%">
+  <h3>Copyright</h3>
+  <p>All rights reserved</p>
+</div>
+
+<!-- END MAIN -->
+</div>
+{% endif %}
 </body>
 </html>
