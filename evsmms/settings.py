@@ -131,3 +131,6 @@ LOGIN_URL = 'accounts/login'
 
 # Login landing page
 LOGIN_REDIRECT_URL = '/'
+
+# Logout landing page
+LOGOUT_REDIRECT_URL = '/'
