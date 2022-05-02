@@ -9,3 +9,6 @@
 /.idea/
 # All Python cache files
 *pyc
+
+# Environmental variables
+evsmms/.env
