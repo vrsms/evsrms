@@ -3,6 +3,8 @@ from django.urls import path
 
 from . import views
 
+app_name = 'kyc'
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('login/', auth_views.LoginView.as_view(), name='login'),

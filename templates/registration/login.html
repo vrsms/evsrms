@@ -11,7 +11,7 @@ please login with an account that has access.</p>
 <p>Please login to see this page.</p>
 {% endif %}
 {% endif %}
-<form method="post" action="{% url 'login' %}">
+<form method="post" action="{% url 'kyc:login' %}">
 {% csrf_token %}
 <table>
 <tr>
@@ -27,5 +27,5 @@ please login with an account that has access.</p>
 <input type="hidden" name="next" value="{{ next }}">
 </form>
 {# Assumes you set up the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a href="{% url 'kyc:password_reset' %}">Lost password?</a></p>
 {% endblock %}

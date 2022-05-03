@@ -30,10 +30,10 @@
     <!-- Header -->
     <div id="header">
         <div id="branding">
-        {% block branding %}EV{% endblock %}
+        {% block branding %}EVSMMS{% endblock %}
         </div>
         {% block usertools %}
-        {% if has_permission %}
+        {% if request.user.is_authenticated %}
         <div id="user-tools">
             {% block welcome-msg %}
                 {% translate 'Welcome,' %}
@@ -62,7 +62,7 @@
     <!-- END Header -->
     {% block breadcrumbs %}
     <div class="breadcrumbs">
-    <a href="{% url 'admin:index' %}">{% translate 'Home' %}</a>
+    <a href="{% url 'kyc:index' %}">{% translate 'Home' %}</a>
     {% if title %} &rsaquo; {{ title }}{% endif %}
     </div>
     {% endblock %}
@@ -96,6 +96,7 @@
         </div>
         <!-- END Content -->
         {% block footer %}<div id="footer"><div style="text-align: center">
+            <p>Crafted with <span style="color:red;">&hearts;</span> from University of Dar es Salaam.</p>
     <p><a href="https://github.com/evsmms/evmms/tree/v0.0.0-alpha">v0.0.0-alpha</a>
         <strong>&copy;2021-
             <script>document.write(new Date().getFullYear().toString());</script>
