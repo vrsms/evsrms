@@ -30,7 +30,7 @@
     <!-- Header -->
     <div id="header">
         <div id="branding">
-        {% block branding %}{% endblock %}
+        {% block branding %}EV{% endblock %}
         </div>
         {% block usertools %}
         {% if has_permission %}
@@ -95,7 +95,17 @@
           <br class="clear">
         </div>
         <!-- END Content -->
-        {% block footer %}<div id="footer"></div>{% endblock %}
+        {% block footer %}<div id="footer"><div style="text-align: center">
+    <p><a href="https://github.com/evsmms/evmms/tree/v0.0.0-alpha">v0.0.0-alpha</a>
+        <strong>&copy;2021-
+            <script>document.write(new Date().getFullYear().toString());</script>
+            <a href="https://evsmms.github.io" title="Evsmms Software">
+                Evsmms&#153 Software</a>
+        </strong>
+    </p>
+    <p> Some rights reserved.</p>
+</div>
+</div>{% endblock %}
       </div>
     </div>
 </div>
