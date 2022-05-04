@@ -48,6 +48,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'suggestions.apps.SuggestionsConfig',
+    'maintenance.apps.MaintenanceConfig',
     'kyc.apps.KycConfig',
     'service.apps.ServiceConfig',
     'django.contrib.admin',
