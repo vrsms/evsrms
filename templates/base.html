@@ -1,22 +1,23 @@
-{% load i18n static %}<!DOCTYPE html>
+{% load i18n static %}
+<!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
 <head>
-<title>{% block title %}{% endblock %}</title>
+<title>{% block title %}{% endblock title %}</title>
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}">
 {% if not is_popup and is_nav_sidebar_enabled %}
   <link rel="stylesheet" type="text/css" href="{% static "admin/css/nav_sidebar.css" %}">
   <script src="{% static 'admin/js/nav_sidebar.js' %}" defer></script>
 {% endif %}
-{% block extrastyle %}{% endblock %}
-{% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}">{% endif %}
-{% block extrahead %}{% endblock %}
+{% block extrastyle %}{% endblock extrastyle %}
+{% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock stylesheet_rtl %}">{% endif %}
+{% block extrahead %}{% endblock extrahead %}
 {% block responsive %}
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive.css" %}">
     {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive_rtl.css" %}">{% endif %}
-{% endblock %}
-{% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
+{% endblock responsive %}
+{% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock blockbots %}
 </head>
 {% load i18n %}
 
@@ -30,7 +31,7 @@
     <!-- Header -->
     <div id="header">
         <div id="branding">
-        {% block branding %}EVSMMS{% endblock %}
+        {% block branding %}EVSMMS{% endblock branding %}
         </div>
         {% block usertools %}
         {% if request.user.is_authenticated %}
@@ -38,7 +39,7 @@
             {% block welcome-msg %}
                 {% translate 'Welcome,' %}
                 <strong>{% firstof user.get_short_name user.get_username %}</strong>.
-            {% endblock %}
+            {% endblock welcome-msg %}
             {% block userlinks %}
                 {% if site_url %}
                     <a href="{{ site_url }}">{% translate 'View site' %}</a> /
@@ -62,11 +63,11 @@
                     {% else %}
                     <a href="{% url 'kyc:logout' %}">{% translate 'Log out' %}</a>
                 {% endif %}
-            {% endblock %}
+            {% endblock userlinks %}
         </div>
         {% endif %}
-        {% endblock %}
-        {% block nav-global %}{% endblock %}
+        {% endblock usertools%}
+        {% block nav-global %}{% endblock nav-global%}
     </div>
     <!-- END Header -->
     {% block breadcrumbs %}
@@ -74,14 +75,14 @@
     <a href="{% url 'kyc:index' %}">{% translate 'Home' %}</a>
     {% if title %} &rsaquo; {{ title }}{% endif %}
     </div>
-    {% endblock %}
+    {% endblock breadcrumbs%}
     {% endif %}
 
     <div class="main shifted" id="main">
       {% if not is_popup and is_nav_sidebar_enabled %}
         {% block nav-sidebar %}
           {% include "admin/nav_sidebar.html" %}
-        {% endblock %}
+        {% endblock nav-sidebar%}
       {% endif %}
       <div class="content">
         {% block messages %}
@@ -93,14 +94,14 @@
         {% endblock messages %}
         <!-- Content -->
         <div id="content" class="{% block coltype %}colM{% endblock %}">
-          {% block pretitle %}{% endblock %}
-          {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
-          {% block content_subtitle %}{% if subtitle %}<h2>{{ subtitle }}</h2>{% endif %}{% endblock %}
+          {% block pretitle %}{% endblock pretitle%}
+          {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock content_title%}
+          {% block content_subtitle %}{% if subtitle %}<h2>{{ subtitle }}</h2>{% endif %}{% endblock content_subtitle%}
           {% block content %}
-            {% block object-tools %}{% endblock %}
+            {% block object-tools %}{% endblock object-tools%}
             {{ content }}
-          {% endblock %}
-          {% block sidebar %}{% endblock %}
+          {% endblock content%}
+          {% block sidebar %}{% endblock sidebar%}
           <br class="clear">
         </div>
         <!-- END Content -->
@@ -115,7 +116,7 @@
     </p>
     <p> Some rights reserved.</p>
 </div>
-</div>{% endblock %}
+</div>{% endblock footer%}
       </div>
     </div>
 </div>
