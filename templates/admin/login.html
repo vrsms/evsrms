@@ -3,24 +3,25 @@
 
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
 {{ form.media }}
-{% endblock %}
+{% endblock extrastyle %}
 
-{% block bodyclass %}{{ block.super }} login{% endblock %}
+{% block bodyclass %}{{ block.super }} login{% endblock bodyclass %}
 
-{% block usertools %}{% endblock %}
+{% block usertools %}{% endblock usertools %}
 
-{% block nav-global %}{% endblock %}
+{% block nav-global %}{% endblock nav-global %}
 
-{% block nav-sidebar %}{% endblock %}
+{% block nav-sidebar %}{% endblock nav-sidebar %}
 
-{% block content_title %}{% endblock %}
+{% block content_title %}{% endblock content_title %}
 
-{% block breadcrumbs %}{% endblock %}
+{% block breadcrumbs %}{% endblock breadcrumbs %}
 
 {% block content %}
 {% if form.errors and not form.non_field_errors %}
 <p class="errornote">
-{% if form.errors.items|length == 1 %}{% translate "Please correct the error below." %}{% else %}{% translate "Please correct the errors below." %}{% endif %}
+{% if form.errors.items|length == 1 %}{% translate "Please correct the error below." %}
+{% else %}{% translate "Please correct the errors below." %}{% endif %}
 </p>
 {% endif %}
 
@@ -65,4 +66,4 @@
 </form>
 <p><a href="{% url 'kyc:password_reset' %}">Lost password?</a></p>
 </div>
-{% endblock %}
+{% endblock content %}
