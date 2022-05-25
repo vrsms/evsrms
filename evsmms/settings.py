@@ -49,7 +49,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'suggestions.apps.SuggestionsConfig',
-    'maintenance.apps.MaintenanceConfig',
+    'repair.apps.MaintenanceConfig',
     'kyc.apps.KycConfig',
     'service.apps.ServiceConfig',
     'django.contrib.admin',

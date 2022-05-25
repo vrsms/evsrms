@@ -1,5 +1,5 @@
 from django.contrib import admin
-from maintenance.models import Ticket
+from repair.models import Ticket
 
 # Register your models here.
 

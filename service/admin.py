@@ -3,5 +3,4 @@ from .models import Vehicle
 from .models import ServiceTicket
 
 # Register your models here.
-admin.site.register(Vehicle)
 admin.site.register(ServiceTicket)
